@@ -10,14 +10,14 @@ enum languages {
 
 vorpal
     .command('travisbot generate', 'Generate a travisCI config for a certain language')
-    .action(function (args, cb) {
+    .action(function (args: any, cb: any) {
         const self: any = this;
         this.prompt({
             type: 'list',
             name: 'lang',
             message: 'What language is your project?',
             choices: Object.keys(languages).map(k => languages[k as any])
-        }, function(result) {
+        }, function(result: any) {
             self.log(`🌍 Using ${result.lang} for project`)
 
             if (result.lang === languages.Node) {
@@ -27,13 +27,21 @@ vorpal
             } else if (result.lang === languages.Python) {
                 pythonHandler();
             }
+
+            cb();
         });
     })
 
 
-const nodeHandler = () => {}
-const phpHandler = () => {}
-const pythonHandler = () => {}
+const nodeHandler = () => {
+    return true;
+}
+const phpHandler = () => {
+    return true;
+}
+const pythonHandler = () => {
+    return true;
+}
 
 // Ask what language they are using
 
