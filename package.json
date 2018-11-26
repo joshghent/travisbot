@@ -1,10 +1,10 @@
 {
   "name": "travisbot",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A bot for generating travis CI configs",
-  "main": "cli.js",
+  "main": "dist/cli.js",
   "scripts": {
-    "test": "test"
+    "build": "tsc"
   },
   "bin": {
     "travisbot": "dist/cli.js"
