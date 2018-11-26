@@ -1,5 +1,5 @@
 {
-  "name": "travisbot",
+  "name": "@joshghent/travisbot",
   "version": "0.1.0",
   "description": "A bot for generating travis CI configs",
   "main": "dist/cli.js",
