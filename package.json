@@ -6,12 +6,21 @@
   "scripts": {
     "test": "test"
   },
+  "bin": {
+    "travisbot": "dist/cli.js"
+  },
   "author": "Josh Ghent <me@joshghent.com>",
   "license": "MIT",
   "dependencies": {
+    "commander": "^2.19.0",
+    "inquirer": "^6.2.0",
+    "tabs-to-spaces": "0.0.1",
     "vorpal": "^1.12.0"
   },
   "devDependencies": {
+    "@types/commander": "^2.12.2",
+    "@types/inquirer": "0.0.43",
+    "@types/node": "^10.12.10",
     "@types/vorpal": "^1.11.0",
     "typescript": "^3.0.3"
   }

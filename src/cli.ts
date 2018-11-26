@@ -1,6 +1,9 @@
-import Vorpal = require('vorpal');
+#!/usr/bin/env node
 
-const vorpal = new Vorpal();
+import commander from "commander";
+import * as inquirer from "inquirer";
+import fs from "fs";
+const tabsToSpaces = require("tabs-to-spaces");
 
 enum languages {
     Node = "Node.js",
@@ -8,17 +11,19 @@ enum languages {
     Python = "Python"
 }
 
-vorpal
-    .command('travisbot generate', 'Generate a travisCI config for a certain language')
-    .action(function (args: any, cb: any) {
-        const self: any = this;
-        this.prompt({
+commander
+    .command('generate')
+    .description('Generate a travisCI config for a certain language')
+    .alias('g')
+    .action(() => {
+        inquirer.prompt([{
             type: 'list',
             name: 'lang',
             message: 'What language is your project?',
             choices: Object.keys(languages).map(k => languages[k as any])
-        }, function(result: any) {
-            self.log(`🌍 Using ${result.lang} for project`)
+        }])
+        .then((result: any) => {
+            console.log(`🌍 Using ${result.lang} for project`)
 
             if (result.lang === languages.Node) {
                 nodeHandler();
@@ -27,15 +32,24 @@ vorpal
             } else if (result.lang === languages.Python) {
                 pythonHandler();
             }
-
-            cb();
         });
-    })
+    });
 
+commander
+    .version(require("./../package.json").version)
+    .parse(process.argv);
 
-const nodeHandler = () => {
-    return true;
+function nodeHandler(): void {
+    const content = `language: node_js
+    node_js:
+      - "node"
+      - "10"
+      - "8"
+      - "lts/*"`;
+    fs.writeFileSync('.travis.yml', tabsToSpaces(content, 4));
+    console.log(`⭐ Finishing writing travis config`);
 }
+
 const phpHandler = () => {
     return true;
 }
