@@ -13,3 +13,6 @@ $ npm install --global @joshghent/travisbot
 $ travisbot generate
 ```
 You will be asked a series of questions and then it will generate you a `.travis.yml` file in the directory you are in
+
+## Like the repo?
+:star: this repo!
