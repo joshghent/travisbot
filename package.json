@@ -4,7 +4,9 @@
   "description": "A bot for generating travis CI configs",
   "main": "dist/cli.js",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "bin": {
     "travisbot": "dist/cli.js"
@@ -15,7 +17,8 @@
     "commander": "^2.19.0",
     "inquirer": "^6.2.0",
     "tabs-to-spaces": "0.0.1",
-    "vorpal": "^1.12.0"
+    "vorpal": "^1.12.0",
+    "snyk": "^1.110.2"
   },
   "devDependencies": {
     "@types/commander": "^2.12.2",
@@ -23,5 +26,6 @@
     "@types/node": "^10.12.10",
     "@types/vorpal": "^1.11.0",
     "typescript": "^3.0.3"
-  }
+  },
+  "snyk": true
 }
