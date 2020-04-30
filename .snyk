@@ -1,5 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.13.5
+version: v1.14.1
 ignore: {}
 # patches apply the minimum changes required to fix a vulnerability
 patch:
@@ -11,3 +11,30 @@ patch:
         patched: '2019-07-03T23:26:27.228Z'
     - vorpal > lodash:
         patched: '2019-07-03T23:26:27.228Z'
+  SNYK-JS-LODASH-567746:
+    - inquirer > lodash:
+        patched: '2020-04-30T23:28:04.562Z'
+    - snyk > lodash:
+        patched: '2020-04-30T23:28:04.562Z'
+    - vorpal > lodash:
+        patched: '2020-04-30T23:28:04.562Z'
+    - snyk > @snyk/dep-graph > lodash:
+        patched: '2020-04-30T23:28:04.562Z'
+    - snyk > inquirer > lodash:
+        patched: '2020-04-30T23:28:04.562Z'
+    - snyk > snyk-config > lodash:
+        patched: '2020-04-30T23:28:04.562Z'
+    - snyk > snyk-mvn-plugin > lodash:
+        patched: '2020-04-30T23:28:04.562Z'
+    - snyk > snyk-nodejs-lockfile-parser > lodash:
+        patched: '2020-04-30T23:28:04.562Z'
+    - snyk > snyk-nuget-plugin > lodash:
+        patched: '2020-04-30T23:28:04.562Z'
+    - snyk > @snyk/dep-graph > graphlib > lodash:
+        patched: '2020-04-30T23:28:04.562Z'
+    - snyk > snyk-go-plugin > graphlib > lodash:
+        patched: '2020-04-30T23:28:04.562Z'
+    - snyk > snyk-nodejs-lockfile-parser > graphlib > lodash:
+        patched: '2020-04-30T23:28:04.562Z'
+    - snyk > snyk-php-plugin > @snyk/composer-lockfile-parser > lodash:
+        patched: '2020-04-30T23:28:04.562Z'
